@@ -20,7 +20,7 @@ pub fn middleware(
   handle_request(req)
 }
 
-pub fn default_responses(handle_request: fn() -> wisp.Response) -> wisp.Response {
+pub fn default_responses(handle_request: fn() -> Response) -> Response {
   let response = handle_request()
 
   use <- bool.guard(when: response.body != wisp.Empty, return: response)
