@@ -1,9 +1,10 @@
+import app/models/item.{type Item}
 import gleam/bool
 import gleam/string_builder
 import wisp.{type Request, type Response}
 
 pub type Context {
-  Context(static_directory: String, items: List(String))
+  Context(static_directory: String, items: List(Item))
 }
 
 pub fn middleware(
@@ -27,7 +28,7 @@ pub fn default_responses(handle_request: fn() -> Response) -> Response {
 
   case response.status {
     404 | 405 ->
-      "<h1>Not Found</h1>"
+      "<h1>Not Found SuperCat!</h1>"
       |> string_builder.from_string
       |> wisp.html_body(response, _)
 
