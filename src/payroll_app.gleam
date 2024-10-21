@@ -4,6 +4,8 @@ import dot_env
 import dot_env/env
 import gleam/erlang/process
 import gleam/io
+import gleam/list
+import gleam/result
 import mist
 import wisp
 import wisp/wisp_mist
